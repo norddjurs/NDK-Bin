@@ -1,0 +1,160 @@
+<NdkFrameworkConfiguration>
+  
+  <!-- Global configuration -->
+  <Section Guid="00000000-0000-0000-0000-000000000000">
+	<!-- Logging
+		Configure the following logging properties:
+	
+		LogNormal			true | 1
+		LogDebug			true | 1
+		LogError			true | 1
+		LogConsole			true | 1
+		LogWindows			true | 1
+		LogFile				true | 1 | <full log filename>
+		LogFileRollSizeMB	Roll the file log at size in megabytes
+		LogFileRollCount	Keep number of log rolls.
+		
+		The default log filename is the path and name of the executeable file, but with the ".log" extension.
+		When configuring a log filename, the directory must exist.
+	-->
+    <Property Key="LogNormal">
+      <Value>True</Value>
+    </Property>
+    <Property Key="LogDebug">
+      <Value>True</Value>
+    </Property>
+    <Property Key="LogError">
+      <Value>True</Value>
+    </Property>
+    <Property Key="LogConsole">
+      <Value>True</Value>
+    </Property>
+    <Property Key="LogWindows">
+      <Value>False</Value>
+    </Property>
+    <Property Key="LogFile">
+      <Value>True</Value>
+    </Property>
+    <Property Key="LogFileRollSizeMB">
+      <Value>5</Value>
+    </Property>
+    <Property Key="LogFileRollCount">
+      <Value>0</Value>
+    </Property>
+	
+	<!-- SMTP
+		Configure the following SMTP properties:
+
+		SmtpHost			The SMTP hostname or IP
+		SmtpPort			The SMTP port number
+		SmtpFrom			The default FROM address to use, when not specified
+		SmtpTo				The default TO address to use, when not specified
+	-->
+    <Property Key="SmtpHost">
+      <Value>smtp.intern.norddjurs.dk</Value>
+    </Property>
+    <Property Key="SmtpPort">
+      <Value>25</Value>
+    </Property>
+    <Property Key="SmtpFrom">
+      <Value>Helpdesk@norddjurs.dk</Value>
+    </Property>
+    <Property Key="SmtpTo">
+      <Value>rpc@norddjurs.dk</Value>
+    </Property>
+	
+	<!-- SQL
+		Configure the following database connections.
+
+		SqlEngine			0 = MSSQL (default)
+		SqlHost<key>		The SQL database hostname
+		SqlDatabase<key>	The database on the hostname
+		SqlUserid<key>		The userid
+		SqlPassword<key>	The password
+		
+		The key is the identifier of the individual database connection, used when getting the
+		database connection.
+		If the userid and password are blank/missing, Windows Authentication (SSPI) is used
+		om Microsoft SQL Server.
+	-->
+    <Property Key="SqlHostMDM-TEST">
+      <Value>MIMER03.intern.norddjurs.dk</Value>
+    </Property>
+    <Property Key="SqlDatabaseMDM-TEST">
+      <Value>MDM-TEST</Value>
+    </Property>
+	
+    <Property Key="SqlHostDEMO">
+      <Value>MIMER01.intern.norddjurs.dk</Value>
+    </Property>
+    <Property Key="SqlDatabaseDEMO">
+      <Value>master</Value>
+    </Property>
+
+	<!-- Active Directory
+		ActiveDirectoryCprAttribute		EmployeeId (default)
+	-->
+    <Property Key="ActiveDirectoryCprAttribute">
+      <Value>extensionAttribute2</Value>
+    </Property>
+
+	<!-- Service
+		If a plugin should be executed by the service, it must be enabled here in
+		the ServiceEnablePlugin property, and the following schedule properties must be configured
+		in the section with the plugin guid:
+		
+		ServiceScheduleMatchYear
+		ServiceScheduleMatchMonth
+		ServiceScheduleMatchDate
+		ServiceScheduleMatchDay
+		ServiceScheduleMatchHour
+		ServiceScheduleMatchMinute
+		
+		Enter values that must match when the plugin must be executed.
+		Empty or not configured values mean everytime. The "Day" property is weekdays, with monday as 1.
+		To execute a plugin every half hour, configure two ServiceScheduleMatchMinute for "0" and "30".
+	-->
+    <Property Key="__ServicePluginReloadInterval">
+      <Value>3</Value>
+    </Property>
+    <Property Key="ServicePluginEnabled">
+      <Value>1DAAFBA8-4122-4F51-908B-1E7C313F67C6</Value>
+    </Property>
+
+  </Section>
+
+
+  
+  <!-- NDK Demo Plugin -->
+  <Section Guid="84FC7623-0B20-40E1-96BF-8B7F0A5BBD94">
+    <Property Key="Test key">
+      <Value>value one</Value>
+      <Value>value two</Value>
+      <Value>value three</Value>
+    </Property>
+  </Section>
+
+
+  
+  <!-- NDK SOFD Plugin -->
+  <Section Guid="1DAAFBA8-4122-4F51-908B-1E7C313F67C6">
+	<!-- Service schedule -->
+    <Property Key="__ServiceScheduleMatchMinute">
+      <Value>12</Value>
+    </Property>
+    <Property Key="ServiceScheduleMatchDay">
+      <Value>1</Value>
+      <Value>2</Value>
+    </Property>
+
+    <Property Key="DatabaseKeyMDM">
+      <Value>MDM-TEST</Value>
+    </Property>
+    <Property Key="DatabaseKeyDSA">
+      <Value>MDM-TEST</Value>
+    </Property>
+	
+	
+  </Section>
+  
+</NdkFrameworkConfiguration>
