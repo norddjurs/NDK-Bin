@@ -70,7 +70,7 @@
 	<!-- SQL
 		Configure the following database connections.
 
-		SqlEngine			0 = MSSQL (default)
+		SqlEngine<key>		0 = MSSQL (default)
 		SqlHost<key>		The SQL database hostname
 		SqlDatabase<key>	The database on the hostname
 		SqlUserid<key>		The userid
@@ -81,6 +81,13 @@
 		If the userid and password are blank/missing, Windows Authentication (SSPI) is used
 		om Microsoft SQL Server.
 	-->
+    <Property Key="SqlHostMDM-PROD">
+      <Value>MIMER03.intern.norddjurs.dk</Value>
+    </Property>
+    <Property Key="SqlDatabaseMDM-PROD">
+      <Value>MDM</Value>
+    </Property>
+	
     <Property Key="SqlHostMDM-TEST">
       <Value>MIMER03.intern.norddjurs.dk</Value>
     </Property>
@@ -100,6 +107,13 @@
 	-->
     <Property Key="ActiveDirectoryCprAttribute">
       <Value>extensionAttribute2</Value>
+    </Property>
+
+	<!-- SOFD Directory
+		SofdDirectoryDatabaseKey		MDM-PROD
+	-->
+    <Property Key="SofdDirectoryDatabaseKey">
+      <Value>MDM-PROD</Value>
     </Property>
 
 	<!-- Service
