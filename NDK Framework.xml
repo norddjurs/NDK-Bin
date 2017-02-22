@@ -154,6 +154,38 @@
 
 
   
+  <!-- NDK ActiveDirectory Inactive Users -->
+  <Section Guid="9EA6C7E2-4822-4F01-A02F-AEC7C4AC84C3">
+    <Property Key="MessageTo">
+      <Value>rpc@norddjurs.dk</Value>
+    </Property>
+    <Property Key="MessageSubject">
+      <Value>AUTO: ActiveDirectory Inactive Users</Value>
+    </Property>
+    <Property Key="BaseDN">
+      <Value>OU=Users,OU=Norddjurs Kommune,DC=intern,DC=norddjurs,DC=dk</Value>
+    </Property>
+    <Property Key="MemberOfGroup">
+      <Value>USRS All Users</Value>
+    </Property>
+    <Property Key="FailAlways">
+      <Value>Yes</Value>
+    </Property>
+    <Property Key="InactivePeriodDays">
+      <Value>90</Value>
+    </Property>
+    <Property Key="InactiveAction">
+      <Value>DISABLE</Value>
+    </Property>
+  </Section>
+
+  
+  
+  
+
+  
+
+  
   <!-- NDK SOFD Plugin -->
   <Section Guid="1DAAFBA8-4122-4F51-908B-1E7C313F67C6">
 	<!-- Service schedule -->
