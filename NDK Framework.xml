@@ -169,7 +169,7 @@
       <Value>USRS All Users</Value>
     </Property>
     <Property Key="FailAlways">
-      <Value>Yes</Value>
+      <Value>No</Value>
     </Property>
     <Property Key="InactivePeriodDays">
       <Value>90</Value>
