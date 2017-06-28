@@ -53,3 +53,9 @@ Copy to setup directories.cmd
 *.pdb
 *.pdb
 *.pdb
+*.pdb
+NDK Access Technology REST Plugin.pdb
+NDK Demo Form.pdb
+NDK Framework.pdb
+NDK Run.pdb
+NDK SOFD Viewer.pdb
